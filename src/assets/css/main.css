@@ -1,0 +1,92 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* add font base */
+
+html {
+  scroll-behavior: smooth;
+  font-size: 14px;
+  color: #ececec;
+}
+
+html,
+body {
+  max-width: 100vw !important;
+  overflow-x: hidden !important;
+}
+
+.active {
+  color: #ed8c39;
+  transition: 0.3s;
+}
+
+.active::after {
+  content: "";
+  display: block;
+  width: 65%;
+  height: 2px;
+  margin: auto;
+  margin-top: 0.5rem;
+  background-color: #ed8c39;
+  animation: elongate 0.3s ease;
+}
+
+@media only screen and (max-width: 1024px) {
+  .active::after {
+    width: 100%;
+  }
+}
+
+@keyframes elongate {
+  from {
+    width: 0;
+  }
+  to {
+    width: 65%;
+  }
+}
+
+select {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background: url("../img/icons/Down.png") no-repeat right center;
+}
+
+option:first-of-type {
+  display: none;
+}
+
+.swiper-pagination {
+  position: relative !important;
+  transform: translateY(10px) !important;
+}
+
+.swiper-pagination-bullet-active {
+  background-color: #ed8c39 !important;
+}
+
+@keyframes upAndDown {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-15px);
+  }
+}
+
+.box1 {
+  animation-delay: 0.8s !important;
+}
+
+.box2 {
+  animation-delay: 1.6s !important;
+}
+
+.box1,
+.box2,
+.box3 {
+  animation: upAndDown 4s ease-in-out infinite;
+}
